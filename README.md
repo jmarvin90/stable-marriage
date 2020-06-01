@@ -24,7 +24,7 @@ Participant:
   - A type of participant which may have multiple 'placement' values of different types ('tentative', 'final') up to a maximum
   
   Programme: 
-   - A matching programme which manages the logic used to match all student's to their preferred schools
+   - A matching programme which manages the logic used to match all students to their preferred schools
  
 
 
