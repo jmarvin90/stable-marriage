@@ -71,5 +71,4 @@ class School(Participant):
             self.preferences.index(self.lowest_ranked_placement)
         ): 
             return True
-        else: 
-            return False
+        return False
