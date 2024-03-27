@@ -20,8 +20,7 @@ class Student(Participant):
         if not self.placement: 
             self.placement = school
             return True
-        else: 
-            return False
+        return False
 
     def displace(self, school: Participant) -> None:
         """Unassigns a School as the Student's placement.s"""
@@ -29,8 +28,7 @@ class Student(Participant):
         if school == self.placement: 
             self.placement = None
             return True
-        else:
-            return False
+        return False
 
     def discount(self, school: Participant) -> list:
         """Discount a school from the student's options."""
