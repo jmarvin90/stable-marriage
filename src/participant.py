@@ -14,8 +14,7 @@ class Participant:
             (self in counterparty.preferences)): 
             
             return True
-        else:
-            return False
+        return False
 
     def strikethrough(self):
         """Returns the Participant's name in strikethrough font"""
