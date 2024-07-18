@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, NoReturn
 
 from src.participant import Participant
 
@@ -14,7 +14,7 @@ class Student(Participant):
     def options(self):
         return self.__options
 
-    def place(self, school: Participant) -> None: 
+    def place(self, school: Participant) -> bool: 
         """Assigns a School to the Student."""
 
         if not self.placement: 
@@ -22,7 +22,7 @@ class Student(Participant):
             return True
         return False
 
-    def displace(self, school: Participant) -> None:
+    def displace(self, school: Participant) -> bool:
         """Unassigns a School as the Student's placement.s"""
 
         if school == self.placement: 
@@ -30,7 +30,7 @@ class Student(Participant):
             return True
         return False
 
-    def discount(self, school: Participant) -> list:
+    def discount(self, school: Participant) -> NoReturn:
         """Discount a school from the student's options."""
         self.__options.remove(school)
         print(self.name, [school.name for school in self.__options])
