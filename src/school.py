@@ -1,3 +1,5 @@
+from typing import NoReturn
+
 from src.participant import Participant
 
 class School(Participant):
@@ -29,18 +31,16 @@ class School(Participant):
             self.max_placements
         )
 
-    def place(self, student: Participant, placement_type: str):
+    def place(self, student: Participant, placement_type: str) -> NoReturn:
         """Assign a Student to the School's placements."""
         self.__placements[student] = placement_type
-        return True
 
-    def displace(self, student: Participant):
+    def displace(self, student: Participant) -> NoReturn:
         """Removes a Student from the School's placements."""
         del(self.__placements[student])
-        return True
 
     @property
-    def lowest_ranked_placement(self): 
+    def lowest_ranked_placement(self) -> Participant: 
         """Returns the lowest ranked tentatively placed Student."""
 
         ranks = [
@@ -52,7 +52,7 @@ class School(Participant):
         return self.preferences[lowest_ranking]
 
     @property
-    def highest_ranking_candidate(self):
+    def highest_ranking_candidate(self) -> Participant:
         """Return the highest ranked tentatively matched / unmatched Student."""
         
         unplaced_candidates = [
@@ -63,7 +63,7 @@ class School(Participant):
   
         return unplaced_candidates[0]
         
-    def prefers(self, student: Participant):
+    def prefers(self, student: Participant) -> bool:
         """"""
 
         if (
