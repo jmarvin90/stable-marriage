@@ -1,3 +1,4 @@
+from typing import NoReturn
 from __future__ import annotations
 
 class Participant:
@@ -7,7 +8,7 @@ class Participant:
         self.name = name
         self.preferences = preferences
 
-    def preference_match(self, counterparty: Participant):
+    def preference_match(self, counterparty: Participant) -> bool:
         """"""
 
         if ((counterparty in self.preferences) and 
@@ -16,7 +17,7 @@ class Participant:
             return True
         return False
 
-    def strikethrough(self):
+    def strikethrough(self) -> NoReturn:
         """Returns the Participant's name in strikethrough font"""
 
         strikethrough = ''
