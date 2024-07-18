@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, NoReturn
 
 from src.school import School
 from src.student import Student
@@ -28,7 +28,7 @@ class Programme:
 
     def match(
         self, student: Student, school: School, match_type: str='tentative'
-    ) -> None: 
+    ) -> NoReturn: 
         """Matches a Student and a School."""
 
         if school.is_full and not school.is_final and school.prefers(student):
@@ -37,14 +37,14 @@ class Programme:
         student.place(school)
         school.place(student, match_type)
 
-    def unmatch(self, student: Student, school: School) -> None:
+    def unmatch(self, student: Student, school: School) -> NoReturn:
         """Unmatches a Student and a School."""
 
         self.pending.append(student)
         student.displace(school)
         school.displace(student)
  
-    def run(self) -> None:
+    def run(self) -> NoReturn:
         """"""
 
         while self.pending:              
